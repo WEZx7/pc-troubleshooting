@@ -367,6 +367,64 @@ def storage_drive_troubleshooting():
     else:
         print("\nInvalid answer. Please enter yes or no.")
 
+def network_troubleshooting():
+    print("\n--- Network Problems ---")
+
+    answer = input(
+        "Is the PC completely unable to connect to the internet? (yes/no): "
+    ).lower()
+
+    if answer == "yes":
+        print("\nPossible causes:")
+        print("- Wi-Fi or Ethernet disabled")
+        print("- Router or modem issue")
+        print("- Incorrect network configuration")
+        print("- Faulty network adapter")
+        print("- DNS or IP configuration problem")
+
+        print("\nRecommended action:")
+        print("- Restart the router and PC")
+        print("- Check Wi-Fi or Ethernet connection")
+        print("- Disable and re-enable the network adapter")
+        print("- Run Windows Network Troubleshooter")
+        print("- Renew the IP address")
+        print("- Try another network if available")
+
+    elif answer == "no":
+        second_answer = input(
+            "Is the internet connection slow or unstable? (yes/no): "
+        ).lower()
+
+        if second_answer == "yes":
+            print("\nPossible causes:")
+            print("- Weak Wi-Fi signal")
+            print("- Network congestion")
+            print("- Background downloads")
+            print("- Router performance issues")
+            print("- ISP connection problems")
+
+            print("\nRecommended action:")
+            print("- Move closer to the Wi-Fi router")
+            print("- Restart the router")
+            print("- Check for background downloads")
+            print("- Test with an Ethernet cable if possible")
+            print("- Run a speed test")
+            print("- Contact the ISP if the issue continues")
+
+        elif second_answer == "no":
+            print("\nRecommended checks:")
+            print("- Check DNS settings")
+            print("- Update network adapter drivers")
+            print("- Review firewall settings")
+            print("- Reset network settings")
+            print("- Test another website or device")
+
+        else:
+            print("\nInvalid answer. Please enter yes or no.")
+
+    else:
+        print("\nInvalid answer. Please enter yes or no.")
+
 def main():
     while True:
         print("\n================================")
@@ -380,7 +438,8 @@ def main():
         print("6. Boot / Windows Startup Problems")
         print("7. BSOD / Blue Screen")
         print("8. Storage Drive Problems")
-        print("9. Exit")
+        print("9. Network Problems")
+        print("10. Exit")
         choice = input("\nSelect a problem: ")
 
         if choice == "1":
@@ -400,10 +459,12 @@ def main():
         elif choice == "8":
           storage_drive_troubleshooting()
         elif choice == "9":
+          network_troubleshooting()
+        elif choice == "10":
           print("\nExiting PC Troubleshooting Tool...")
           break
         else:
-          print("\nInvalid option. Please select 1-9.")
+          print("\nInvalid option. Please select 1-10.")
 
 
 if __name__ == "__main__":
