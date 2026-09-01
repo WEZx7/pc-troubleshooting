@@ -144,6 +144,61 @@ def overheating_troubleshooting():
     else:
         print("\nInvalid answer. Please enter yes or no.")
 
+def slow_performance_troubleshooting():
+    print("\n--- Slow Performance ---")
+
+    answer = input(
+        "Is the PC slow immediately after startup? (yes/no): "
+    ).lower()
+
+    if answer == "yes":
+        print("\nPossible causes:")
+        print("- Too many startup applications")
+        print("- High background CPU or memory usage")
+        print("- Low available storage")
+        print("- Malware or unwanted software")
+
+        print("\nRecommended action:")
+        print("- Disable unnecessary startup apps")
+        print("- Check Task Manager for high CPU or memory usage")
+        print("- Free up disk space")
+        print("- Run a malware scan")
+        print("- Restart the PC and install pending updates")
+
+    elif answer == "no":
+        second_answer = input(
+            "Does the PC become slow when opening programs or games? (yes/no): "
+        ).lower()
+
+        if second_answer == "yes":
+            print("\nPossible causes:")
+            print("- Insufficient RAM")
+            print("- Slow or failing storage drive")
+            print("- High CPU usage")
+            print("- Background applications")
+            print("- Thermal throttling")
+
+            print("\nRecommended action:")
+            print("- Check Task Manager performance usage")
+            print("- Close unnecessary applications")
+            print("- Check drive health")
+            print("- Check CPU and GPU temperatures")
+            print("- Consider upgrading RAM or storage if needed")
+
+        elif second_answer == "no":
+            print("\nRecommended checks:")
+            print("- Check Windows updates")
+            print("- Scan for malware")
+            print("- Review installed applications")
+            print("- Check available disk space")
+            print("- Restart the system")
+
+        else:
+            print("\nInvalid answer. Please enter yes or no.")
+
+    else:
+        print("\nInvalid answer. Please enter yes or no.")
+
 def main():
     while True:
         print("\n================================")
@@ -153,7 +208,8 @@ def main():
         print("2. PC Powers On But No Display")
         print("3. Random Shutdowns / Restarts")
         print("4. Overheating")
-        print("5. Exit")
+        print("5. Slow Performance")
+        print("6. Exit")
 
         choice = input("\nSelect a problem: ")
 
@@ -166,10 +222,12 @@ def main():
         elif choice == "4":
            overheating_troubleshooting()
         elif choice == "5":
+           slow_performance_troubleshooting()
+        elif choice == "6":
            print("\nExiting PC Troubleshooting Tool...")
            break
         else:
-           print("\nInvalid option. Please select 1-5.")
+           print("\nInvalid option. Please select 1-6.")
 
 
 if __name__ == "__main__":
