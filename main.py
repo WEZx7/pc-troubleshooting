@@ -199,6 +199,62 @@ def slow_performance_troubleshooting():
     else:
         print("\nInvalid answer. Please enter yes or no.")
 
+def boot_startup_troubleshooting():
+    print("\n--- Boot / Windows Startup Problems ---")
+
+    answer = input(
+        "Does the PC reach the Windows loading screen? (yes/no): "
+    ).lower()
+
+    if answer == "no":
+        print("\nPossible causes:")
+        print("- Boot drive not detected")
+        print("- Incorrect BIOS boot order")
+        print("- Loose SATA or power cable")
+        print("- Failed SSD or HDD")
+        print("- Corrupted bootloader")
+
+        print("\nRecommended action:")
+        print("- Check if the storage drive appears in BIOS")
+        print("- Verify the correct boot drive is selected")
+        print("- Reseat storage cables if applicable")
+        print("- Run drive diagnostics")
+        print("- Try Windows recovery or startup repair")
+
+    elif answer == "yes":
+        second_answer = input(
+            "Does Windows get stuck, restart, or show an error during startup? (yes/no): "
+        ).lower()
+
+        if second_answer == "yes":
+            print("\nPossible causes:")
+            print("- Corrupted Windows system files")
+            print("- Failed Windows update")
+            print("- Driver conflict")
+            print("- Storage errors")
+            print("- Malware or damaged startup files")
+
+            print("\nRecommended action:")
+            print("- Try Windows Safe Mode")
+            print("- Run Startup Repair")
+            print("- Use System Restore if available")
+            print("- Check disk health")
+            print("- Run system file repair tools")
+
+        elif second_answer == "no":
+            print("\nRecommended checks:")
+            print("- Check startup applications")
+            print("- Review recent Windows updates")
+            print("- Check Event Viewer for boot errors")
+            print("- Verify available storage space")
+            print("- Restart and test again")
+
+        else:
+            print("\nInvalid answer. Please enter yes or no.")
+
+    else:
+        print("\nInvalid answer. Please enter yes or no.")
+
 def main():
     while True:
         print("\n================================")
@@ -209,8 +265,8 @@ def main():
         print("3. Random Shutdowns / Restarts")
         print("4. Overheating")
         print("5. Slow Performance")
-        print("6. Exit")
-
+        print("6. Boot / Windows Startup Problems")
+        print("7. Exit")
         choice = input("\nSelect a problem: ")
 
         if choice == "1":
@@ -224,10 +280,12 @@ def main():
         elif choice == "5":
            slow_performance_troubleshooting()
         elif choice == "6":
+           boot_startup_troubleshooting()
+        elif choice == "7":
            print("\nExiting PC Troubleshooting Tool...")
            break
         else:
-           print("\nInvalid option. Please select 1-6.")
+           print("\nInvalid option. Please select 1-7.")
 
 
 if __name__ == "__main__":
