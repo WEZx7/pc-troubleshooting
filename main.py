@@ -255,6 +255,62 @@ def boot_startup_troubleshooting():
     else:
         print("\nInvalid answer. Please enter yes or no.")
 
+def bsod_troubleshooting():
+    print("\n--- BSOD / Blue Screen ---")
+
+    answer = input(
+        "Did the blue screen start after installing a driver, update, or new hardware? (yes/no): "
+    ).lower()
+
+    if answer == "yes":
+        print("\nPossible causes:")
+        print("- Faulty or incompatible driver")
+        print("- Problematic Windows update")
+        print("- New hardware conflict")
+        print("- BIOS or chipset compatibility issue")
+
+        print("\nRecommended action:")
+        print("- Roll back or uninstall the recent driver")
+        print("- Remove or test recently installed hardware")
+        print("- Uninstall the latest Windows update if needed")
+        print("- Update chipset and motherboard drivers")
+        print("- Check the BSOD stop code for more details")
+
+    elif answer == "no":
+        second_answer = input(
+            "Does the blue screen happen randomly during normal use or gaming? (yes/no): "
+        ).lower()
+
+        if second_answer == "yes":
+            print("\nPossible causes:")
+            print("- Unstable or faulty RAM")
+            print("- CPU or GPU overheating")
+            print("- Storage drive errors")
+            print("- Power supply instability")
+            print("- Corrupted system files")
+
+            print("\nRecommended action:")
+            print("- Run a memory diagnostic test")
+            print("- Check CPU and GPU temperatures")
+            print("- Check SSD or HDD health")
+            print("- Run Windows system file repair tools")
+            print("- Check Windows Event Viewer")
+            print("- Record the BSOD stop code")
+
+        elif second_answer == "no":
+            print("\nRecommended checks:")
+            print("- Record the exact BSOD stop code")
+            print("- Check Device Manager for driver problems")
+            print("- Install pending Windows updates")
+            print("- Scan for malware")
+            print("- Check system logs for errors")
+
+        else:
+            print("\nInvalid answer. Please enter yes or no.")
+
+    else:
+        print("\nInvalid answer. Please enter yes or no.")
+
 def main():
     while True:
         print("\n================================")
@@ -266,7 +322,8 @@ def main():
         print("4. Overheating")
         print("5. Slow Performance")
         print("6. Boot / Windows Startup Problems")
-        print("7. Exit")
+        print("7. BSOD / Blue Screen")
+        print("8. Exit") 
         choice = input("\nSelect a problem: ")
 
         if choice == "1":
@@ -282,10 +339,12 @@ def main():
         elif choice == "6":
            boot_startup_troubleshooting()
         elif choice == "7":
+           bsod_troubleshooting()
+        elif choice == "8":
            print("\nExiting PC Troubleshooting Tool...")
            break
         else:
-           print("\nInvalid option. Please select 1-7.")
+           print("\nInvalid option. Please select 1-8.")
 
 
 if __name__ == "__main__":
