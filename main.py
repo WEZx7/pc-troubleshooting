@@ -311,6 +311,62 @@ def bsod_troubleshooting():
     else:
         print("\nInvalid answer. Please enter yes or no.")
 
+def storage_drive_troubleshooting():
+    print("\n--- Storage Drive Problems ---")
+
+    answer = input(
+        "Is the storage drive missing from Windows or BIOS? (yes/no): "
+    ).lower()
+
+    if answer == "yes":
+        print("\nPossible causes:")
+        print("- Loose SATA or power cable")
+        print("- Drive not seated correctly")
+        print("- Failed SSD or HDD")
+        print("- Disabled storage controller")
+        print("- Incorrect BIOS configuration")
+
+        print("\nRecommended action:")
+        print("- Check SATA and power connections")
+        print("- Reseat the drive if applicable")
+        print("- Check if the drive appears in BIOS")
+        print("- Try another SATA port or cable")
+        print("- Test the drive in another system if possible")
+
+    elif answer == "no":
+        second_answer = input(
+            "Is the drive very slow, freezing, or making unusual noises? (yes/no): "
+        ).lower()
+
+        if second_answer == "yes":
+            print("\nPossible causes:")
+            print("- Failing HDD or SSD")
+            print("- File system errors")
+            print("- Low free storage")
+            print("- High disk usage")
+            print("- Bad sectors or drive wear")
+
+            print("\nRecommended action:")
+            print("- Back up important files immediately")
+            print("- Check drive health and SMART status")
+            print("- Check Task Manager for high disk usage")
+            print("- Run file system diagnostics")
+            print("- Replace the drive if health warnings appear")
+
+        elif second_answer == "no":
+            print("\nRecommended checks:")
+            print("- Check available disk space")
+            print("- Review Disk Management")
+            print("- Check for Windows storage errors")
+            print("- Update storage controller drivers")
+            print("- Restart the system and test again")
+
+        else:
+            print("\nInvalid answer. Please enter yes or no.")
+
+    else:
+        print("\nInvalid answer. Please enter yes or no.")
+
 def main():
     while True:
         print("\n================================")
@@ -323,7 +379,8 @@ def main():
         print("5. Slow Performance")
         print("6. Boot / Windows Startup Problems")
         print("7. BSOD / Blue Screen")
-        print("8. Exit") 
+        print("8. Storage Drive Problems")
+        print("9. Exit")
         choice = input("\nSelect a problem: ")
 
         if choice == "1":
@@ -341,10 +398,12 @@ def main():
         elif choice == "7":
            bsod_troubleshooting()
         elif choice == "8":
-           print("\nExiting PC Troubleshooting Tool...")
-           break
+          storage_drive_troubleshooting()
+        elif choice == "9":
+          print("\nExiting PC Troubleshooting Tool...")
+          break
         else:
-           print("\nInvalid option. Please select 1-8.")
+          print("\nInvalid option. Please select 1-9.")
 
 
 if __name__ == "__main__":
