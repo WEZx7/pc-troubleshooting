@@ -90,6 +90,60 @@ def random_shutdown_troubleshooting():
     else:
         print("\nInvalid answer. Please enter yes or no.")
 
+def overheating_troubleshooting():
+    print("\n--- Overheating ---")
+
+    answer = input(
+        "Does the PC get very hot or loud during normal use? (yes/no): "
+    ).lower()
+
+    if answer == "yes":
+        print("\nPossible causes:")
+        print("- Dust buildup")
+        print("- Poor airflow")
+        print("- Failing or slow fans")
+        print("- Old thermal paste")
+        print("- High CPU or GPU load")
+
+        print("\nRecommended action:")
+        print("- Clean dust from fans and heatsinks")
+        print("- Make sure case fans are installed correctly")
+        print("- Check CPU and GPU temperatures")
+        print("- Replace thermal paste if temperatures remain high")
+        print("- Close unnecessary background applications")
+
+    elif answer == "no":
+        second_answer = input(
+            "Does the PC overheat mainly during gaming or heavy workloads? (yes/no): "
+        ).lower()
+
+        if second_answer == "yes":
+            print("\nPossible causes:")
+            print("- GPU or CPU cooling limitation")
+            print("- Poor case airflow")
+            print("- Aggressive overclocking")
+            print("- High power consumption")
+
+            print("\nRecommended action:")
+            print("- Monitor CPU and GPU temperatures")
+            print("- Improve case airflow")
+            print("- Reduce overclock settings")
+            print("- Check fan curves")
+            print("- Make sure vents are not blocked")
+
+        elif second_answer == "no":
+            print("\nRecommended checks:")
+            print("- Check temperature sensors")
+            print("- Inspect fans for unusual noise")
+            print("- Verify heatsinks are mounted correctly")
+            print("- Check for background processes using high CPU")
+
+        else:
+            print("\nInvalid answer. Please enter yes or no.")
+
+    else:
+        print("\nInvalid answer. Please enter yes or no.")
+
 def main():
     while True:
         print("\n================================")
@@ -98,21 +152,24 @@ def main():
         print("1. PC Won't Power On")
         print("2. PC Powers On But No Display")
         print("3. Random Shutdowns / Restarts")
-        print("4. Exit")
+        print("4. Overheating")
+        print("5. Exit")
 
         choice = input("\nSelect a problem: ")
 
         if choice == "1":
             no_power_troubleshooting()
         elif choice == "2":
-            no_display_troubleshooting()
+           no_display_troubleshooting()
         elif choice == "3":
-            random_shutdown_troubleshooting()
+           random_shutdown_troubleshooting()
         elif choice == "4":
-            print("\nExiting PC Troubleshooting Tool...")
-            break
+           overheating_troubleshooting()
+        elif choice == "5":
+           print("\nExiting PC Troubleshooting Tool...")
+           break
         else:
-            print("\nInvalid option. Please select 1-4.")
+           print("\nInvalid option. Please select 1-5.")
 
 
 if __name__ == "__main__":
