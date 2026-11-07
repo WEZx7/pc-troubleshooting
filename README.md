@@ -121,6 +121,20 @@ Example Menu
 9. Network Problems
 10. Generate Troubleshooting Report
 11. Exit
+## Screenshots
+
+**Guided diagnosis: PC won't power on**
+
+![PC won't power on](screenshots/01-no-power.png)
+
+**Follow-up questions: random shutdowns**
+
+![Random shutdowns](screenshots/02-random-shutdowns.png)
+
+**Troubleshooting report generator**
+
+![Report generator](screenshots/03-report-generator.png)
+
 ## Project Purpose
 
 This project was created to practice Python programming while building a practical troubleshooting assistant for common IT support scenarios.
